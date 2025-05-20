@@ -19,24 +19,6 @@ The application implements a product feed synchronization that:
   - Removing products no longer present in the feed
 - Uses Redis for tracking product IDs to enable efficient sync operations
 
-## Technical Implementation
-
-### Performance Considerations
-
-- Uses streaming XML parsing to handle large feeds without loading entire file into memory
-- Utilizes Redis for fast ID tracking and comparison
-- Processes data in chunks to maintain stable memory usage
-
-### Data Flow
-
-1. Stream XML feed from source
-2. Parse XML chunks using streaming parser
-3. Process products in batches
-4. Update database with new/updated products
-5. Remove products no longer in feed
-6. Update Redis cache with current product IDs
-
-
 ## Prerequisites
 
 - Node.js (v18 or higher)
@@ -57,13 +39,13 @@ cd Product-Feed-Sync
 npm install
 ```
 
-3. Create a `.env` file and configure Redis, Postgres, and server port.
+3. Create a `.env` file based on `.env.example`, and configure it with the correct Redis, PostgreSQL, and server port values.
 
 ## Configuration
 
 The application uses the following environment variables:
 
-- `PORT` - Server port (default: 3000)
+- `PORT` - Server port
 - `DB_HOST` - PostgreSQL host
 - `DB_PORT` - PostgreSQL port
 - `DB_NAME` - Database name

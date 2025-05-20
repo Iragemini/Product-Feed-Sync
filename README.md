@@ -66,8 +66,9 @@ npm start
 npm run docker:start
 ```
 This command will:
-	•	Start Redis and PostgreSQL containers using Docker
-	•	Automatically initialize the database, including creating required tables and stored functions
+
+- Start Redis and PostgreSQL containers using Docker
+- Automatically initialize the database, including creating required tables and stored functions
 
 ## API Endpoints
 
